@@ -1,118 +1,452 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  color: white;
-  background-color: #000; 
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-color: #000;
 }
 
 header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  background-color: transparent;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
 
 nav img {
-  width: 150px;
+    width: 150px;
 }
 
 nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
+    display: flex;
+    gap: 30px;
+    list-style: none;
 }
 
 nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
+
 
 /* Hero Section */
 main > section:first-of-type {
-  background-image:url('./images/Object.png');
-  background-size: auto 100%;
-  background-position: center;
-  text-align: center;
-  padding: 180px 20px 100px;
-  position: relative;
+    background-image:url('./images/Object.png');
+    background-size: auto 100%;
+    background-position: center;
+    text-align: center; /* This centers the overall section content */
+    padding: 180px 20px 100px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+
 main > section:first-of-type::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
 main > section:first-of-type > div:first-child {
-  position: relative;
-  z-index: 2;
-  color: white;
+    position: relative;
+    z-index: 2;
+    color: white;
+    margin-bottom: 50px; /* Space between main hero text and "Learn from the pros" */
+    text-align: center; /* ADD THIS LINE TO ENSURE BUTTON IS CENTERED */
 }
 
 main > section:first-of-type h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
+    font-size: 60px;
+    margin-bottom: 10px;
 }
 
 main > section:first-of-type span {
-  margin: 0 10px;
-  font-weight: 600;
-  font-size: 18px;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 main > section:first-of-type button {
-  margin-top: 20px;
-  padding: 12px 30px;
-  font-size: 16px;
-  background-color: #C271FF;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #C271FF;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
+
+main > section:first-of-type button:hover {
+    opacity: 0.9;
+}
+
+
 
 /* Learn from the pros */
 main > section:first-of-type > div:last-child {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-  position: relative;
+    margin-top: 50px; /* Adjusted margin-top to fit better within hero section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    position: relative;
 }
 
 main > section:first-of-type > div:last-child h2 {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 main > section:first-of-type > div:last-child > div {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 main > section:first-of-type > div:last-child > div > div {
-  text-align: center;
+    text-align: center;
+    width: 150px; /* Constrain width of each pro card */
 }
 
 main > section:first-of-type > div:last-child img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+main > section:first-of-type > div:last-child h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+main > section:first-of-type > div:last-child p {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+
+/* Testimonial Section */
+main > section:nth-of-type(2) {
+    display: flex;
+    flex-direction: column; /* Default to column for smaller screens */
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+    background-color: #C271FF;
+    color: white;
+    gap: 40px;
+    text-align: center; /* Center text by default */
+}
+
+@media (min-width: 768px) {
+    main > section:nth-of-type(2) {
+        flex-direction: row; /* Row direction for larger screens */
+        text-align: left; /* Align text left in row layout */
+    }
+}
+
+
+main > section:nth-of-type(2) img {
+    width: 200px;
+    height: 200px; /* Ensure height matches width for perfect circle */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main > section:nth-of-type(2) blockquote {
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    max-width: 600px; /* Constrain quote width */
+    line-height: 1.5;
+}
+
+main > section:nth-of-type(2) h3 {
+    margin-bottom: 5px;
+}
+
+main > section:nth-of-type(2) p {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Popular Tutorials */
+.tutorials { /* Targeted by class now */
+    padding: 80px 60px;
+    background-color: #f5f5f5; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+    text-align: center;
+}
+
+.tutorials h2 {
+    color: #000; /* Black heading */
+    margin-bottom: 40px;
+}
+
+/* Corrected selector for the main tutorial grid container */
+.tutorial-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 30px; /* Space between cards */
+    max-width: 1200px; /* Optional: Constrain width if needed */
+    margin: 0 auto; /* Center the grid container itself */
+}
+
+/* Styling for individual tutorial cards */
+.tutorial-card {
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 20px; /* Adjust padding as necessary, mainly for content inside */
+    width: 250px; /* Fixed width for each card as per design */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left; /* Align content inside card to left */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    overflow: hidden; /* Ensures rounded corners on image are respected */
+}
+
+/* Thumbnail and Play Icon Overlay */
+.tutorial-card .thumbnail {
+    position: relative; /* Establishes positioning context for the play icon */
+    width: 100%;
+    height: 150px; /* Fixed height for consistent thumbnails */
+    overflow: hidden; /* Ensures image fits within */
+    border-radius: 10px 10px 0 0; /* Only top corners rounded */
+}
+
+.tutorial-card .thumbnail img:first-child { /* The actual video thumbnail image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area without stretching */
+    display: block;
+}
+
+.tutorial-card .thumbnail .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the play icon */
+    width: 64px; /* Adjust size as seen in design */
+    height: 64px;
+    cursor: pointer;
+    z-index: 2; /* Ensure it's above the thumbnail image */
+}
+
+/* Text content within the card, adding padding */
+.tutorial-card h3 {
+    margin: 15px 15px 10px; /* Top, horizontal, bottom margin */
+    font-size: 1.1em;
+    color: #000; /* Black for title */
+}
+
+.tutorial-card p {
+    margin: 0 15px 10px; /* Horizontal margin */
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #666; /* Grey for description */
+    flex-grow: 1; /* Allows description to take up available space */
+}
+
+/* Author section */
+.tutorial-card .author {
+    display: flex;
+    align-items: center;
+    margin: 10px 15px; /* Adjust margin */
+}
+
+.tutorial-card .author img {
+    width: 30px; /* Smaller avatar size */
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.tutorial-card .author h4 {
+    font-size: 0.9em;
+    color: #C271FF; /* Purple for author name */
+}
+
+/* Star Rating */
+.tutorial-card .rating {
+    display: flex;
+    align-items: center;
+    margin: 5px 15px 10px; /* Adjust margin */
+}
+
+.tutorial-card .rating i.fas.fa-star {
+    color: #C271FF; /* Purple color for the stars */
+    font-size: 1em; /* Adjust size as needed, e.g., 16px */
+    margin-right: 2px; /* Small gap between stars */
+}
+
+/* Duration text */
+.tutorial-card .duration {
+    font-size: 0.9em;
+    color: #666; /* Darker grey, closer to design */
+    text-align: right;
+    margin: 0 15px 10px; /* Adjust position relative to the end of the card */
+}
+
+
+/* Free Membership */
+main > section:nth-of-type(4) {
+    background-color: #071629;
+    color: white; /* General text color for this section */
+    text-align: center; /* This will center the h2 and the button if they are block elements */
+    padding: 80px 60px;
+}
+
+main > section:nth-of-type(4) h2 {
+    margin-bottom: 40px;
+    color: #C271FF; /* Set heading color to purple as per design */
+}
+
+/* Styling for the wrapper of the four membership benefit blocks */
+.membership-benefits-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center the blocks as a group */
+    gap: 20px; /* Space between the blocks */
+    margin-bottom: 40px; /* Space between the blocks and the button */
+    max-width: 1000px; /* Optional: Adjust max-width if blocks stretch too wide */
+    margin-left: auto; /* Center the container itself */
+    margin-right: auto; /* Center the container itself */
+}
+
+/* !!! THIS IS THE CORRECTED SELECTOR FOR INDIVIDUAL MEMBERSHIP BLOCKS !!! */
+.membership-benefits-container > div {
+    flex-basis: 200px; /* Each item will try to be 200px wide */
+    flex-grow: 1; /* Allow items to grow to fill space if available */
+    max-width: 250px; /* Prevents them from getting too wide if space is abundant */
+    margin: 0; /* Remove previous margins if they conflict with gap */
+    padding: 10px; /* Add some internal padding if needed, adjust as per design */
+}
+
+/* Ensure the image styling remains */
+main > section:nth-of-type(4) img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+/* Ensure the button is a block element and centered */
+main > section:nth-of-type(4) button {
+    display: block; /* Make the button a block element */
+    margin: 40px auto 0; /* Center it horizontally with auto margins, 40px top margin */
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #C271FF;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+main > section:nth-of-type(4) button:hover {
+    opacity: 0.9;
+}
+
+
+/* FAQ Section */
+main > section:nth-of-type(5) {
+    background-color: white;
+    color: #333;
+    padding: 80px 60px;
+}
+
+main > section:nth-of-type(5) h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+main > section:nth-of-type(5) > div {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main > section:nth-of-type(5) > div > div {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px; /* Max width for each column to prevent too wide on large screens */
+    margin-bottom: 30px; /* Space between FAQ columns if they wrap */
+}
+
+main > section:nth-of-type(5) h3 {
+    margin-bottom: 10px;
+    color: #000; /* Adjusted to black as per design, not purple */
+}
+
+main > section:nth-of-type(5) p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #666; /* Grey for answer text */
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: #071629;
+    color: white;
+    padding: 60px 20px 30px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    /* margin-left: 10px; Removed as often handled by parent padding */
+    padding: 0 40px; /* Added internal padding for spacing */
+}
+
+.footer-logo {
+    width: 160px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials i {
+    font-size: 20px;
+    color: white;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-socials i:hover {
+    color: #C271FF;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #ffffffb3; /* Slightly transparent white */
 }
