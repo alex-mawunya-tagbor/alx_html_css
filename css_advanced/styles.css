@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background-color: #000; 
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+nav img {
+  width: 150px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero Section */
+main > section:first-of-type {
+  background-image:url('./images/Object.png');
+  background-size: auto 100%;
+  background-position: center;
+  text-align: center;
+  padding: 180px 20px 100px;
+  position: relative;
+}
+
+main > section:first-of-type::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+main > section:first-of-type > div:first-child {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+main > section:first-of-type h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+main > section:first-of-type span {
+  margin: 0 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+main > section:first-of-type button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #C271FF;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Learn from the pros */
+main > section:first-of-type > div:last-child {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+main > section:first-of-type > div:last-child h2 {
+  margin-bottom: 40px;
+}
+
+main > section:first-of-type > div:last-child > div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+main > section:first-of-type > div:last-child > div > div {
+  text-align: center;
+}
+
+main > section:first-of-type > div:last-child img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
