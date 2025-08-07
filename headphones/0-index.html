@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Headphones - Header</title>
+    <title>Headphones</title>
     <!-- Link to the CSS stylesheet -->
     <link rel="stylesheet" href="0-styles.css">
     <!-- Google Fonts - Inter -->
@@ -14,20 +14,13 @@
         <div class="container">
             <!-- Navigation Bar -->
             <nav class="navbar">
-                <!-- Hamburger menu icon for mobile -->
-                <div class="menu-icon" id="menu-icon">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
                 <div class="logo">
-                    <!-- Placeholder for logo image -->
-                    <img src="/images/logo_headphones.png" alt="Headphones Logo" class="logo-img">
+                    <img src="images/logo_headphones.png" alt="Headphones Logo" class="logo-img">
                 </div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#what-we-do">what we do</a></li>
-                    <li><a href="#our-results">our results</a></li>
-                    <li><a href="#contact-us">contact us</a></li>
+                <ul class="nav-links">
+                    <li><a href="#">what we do</a></li>
+                    <li><a href="#">our results</a></li>
+                    <li><a href="#">contact us</a></li>
                 </ul>
             </nav>
 
@@ -42,20 +35,5 @@
             </div>
         </div>
     </header>
-
-    <script>
-        // Basic JavaScript to toggle the mobile navigation menu
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuIcon = document.getElementById('menu-icon');
-            const navLinks = document.getElementById('nav-links');
-
-            if (menuIcon && navLinks) {
-                menuIcon.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                    menuIcon.classList.toggle('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
