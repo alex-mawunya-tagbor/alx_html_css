@@ -1,0 +1,234 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --primary-text-color: #FFFFFF;
+    --secondary-text-color: rgba(255, 255, 255, 0.7);
+    --accent-color: #FF6565;
+    --background-overlay: rgba(0, 0, 0, 0.6); /* Dark overlay for the background image */
+    --font-family-inter: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-family-inter);
+    color: var(--primary-text-color);
+    background-color: #333; /* Fallback background color */
+    line-height: 1.6;
+}
+
+/* Container for consistent spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Padding on sides for smaller screens */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 800px; /* Adjust height as needed */
+    background-image: url('images/headphones_hero_1.jpg'); /* Placeholder for background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center;
+    flex-direction: column; /* Stack elements vertically */
+    padding-top: 50px; /* Space for the fixed header if it were fixed */
+}
+
+/* Overlay for the background image */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-overlay);
+    z-index: 1;
+}
+
+.container > * { /* Ensure content is above the overlay */
+    position: relative;
+    z-index: 2;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute; /* Position relative to hero-section */
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.logo-img {
+    height: 40px; /* Adjust logo height */
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Space between navigation items */
+}
+
+.nav-links a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Content Styling */
+.hero-content {
+    max-width: 600px;
+    margin-top: 80px; /* Space below navigation */
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    margin-bottom: 30px;
+}
+
+.call-to-action-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 40px;
+}
+
+.call-to-action-btn:hover {
+    background-color: #e05555; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.hero-description {
+    font-size: 16px;
+    color: var(--secondary-text-color);
+    line-height: 1.8;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between; /* Space out hamburger and logo */
+        padding: 15px 20px; /* Adjust padding for mobile */
+    }
+
+    .logo {
+        position: absolute; /* Position logo absolutely to center it */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .menu-icon {
+        display: flex; /* Show hamburger icon on mobile */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 100; /* Ensure it's above other elements */
+    }
+
+    .menu-icon .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-text-color);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        background-color: rgba(0, 0, 0, 0.9); /* Dark overlay when active */
+        padding-top: 80px; /* Space below the logo/hamburger */
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%); /* Start off-screen */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+        transform: translateX(0); /* Slide in */
+    }
+
+    .nav-links a {
+        font-size: 20px; /* Larger links for touch */
+    }
+
+    .hero-section {
+        min-height: 600px; /* Adjust height for mobile */
+        padding-top: 100px; /* More space for header */
+    }
+
+    .hero-title {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .call-to-action-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphones - Header</title>
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="0-styles.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero-section">
+        <div class="container">
+            <!-- Navigation Bar -->
+            <nav class="navbar">
+                <!-- Hamburger menu icon for mobile -->
+                <div class="menu-icon" id="menu-icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="logo">
+                    <!-- Placeholder for logo image -->
+                    <img src="/images/logo_headphones.png" alt="Headphones Logo" class="logo-img">
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#what-we-do">what we do</a></li>
+                    <li><a href="#our-results">our results</a></li>
+                    <li><a href="#contact-us">contact us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1 class="hero-title">Lorem ipsum dolor set amet lorem ipsum</h1>
+                <p class="hero-subtitle">Lorem ipsum dolor set amet lorem ipsum</p>
+                <button class="call-to-action-btn">CALL TO ACTION</button>
+                <p class="hero-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Basic JavaScript to toggle the mobile navigation menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.getElementById('menu-icon');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuIcon && navLinks) {
+                menuIcon.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuIcon.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
